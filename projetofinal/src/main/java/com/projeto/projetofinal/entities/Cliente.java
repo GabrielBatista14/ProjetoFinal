@@ -1,7 +1,9 @@
 package com.projeto.projetofinal.entities;
-
 import jakarta.persistence.*;
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "tbPessoa")
 public class Cliente {
@@ -11,7 +13,14 @@ public class Cliente {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    String cpf;
+    private String cpf;
 
+    @Column(nullable = false)
+    private String email;
 
+    @Column(nullable = false)
+    private String telefone;
 }
+
+
+
