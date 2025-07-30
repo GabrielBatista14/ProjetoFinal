@@ -1,5 +1,6 @@
-package com.projeto.projetofinal.entities;
+package com.projeto.projetofinal.modelos.entidades;
 
+import com.projeto.projetofinal.modelos.entidades.Cliente;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,7 +16,7 @@ public class Conta {
     @Column(nullable = false)
     private String numero;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String chavePix;
 
     @Column(nullable = false)
