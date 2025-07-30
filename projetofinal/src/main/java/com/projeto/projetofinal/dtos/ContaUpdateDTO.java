@@ -1,4 +1,4 @@
-package com.projeto.projetofinal.modelos.dtos;
+package com.projeto.projetofinal.dtos;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

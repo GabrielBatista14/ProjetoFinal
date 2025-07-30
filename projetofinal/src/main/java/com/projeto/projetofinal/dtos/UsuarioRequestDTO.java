@@ -1,4 +1,4 @@
-package com.projeto.projetofinal.modelos.dtos;
+package com.projeto.projetofinal.dtos;
 
 import com.projeto.projetofinal.modelos.enums.Perfil;
 import jakarta.validation.constraints.NotBlank;

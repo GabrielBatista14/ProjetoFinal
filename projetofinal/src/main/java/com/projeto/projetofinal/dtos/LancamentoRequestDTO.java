@@ -1,23 +1,20 @@
-package com.projeto.projetofinal.modelos.dtos;
-
+package com.projeto.projetofinal.dtos;
 
 import com.projeto.projetofinal.modelos.enums.TipoLancamento;
 import com.projeto.projetofinal.modelos.enums.TipoOperacao;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-@Getter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-public class LancamentoResponseDTO {
+public class LancamentoRequestDTO {
 
-    private Long id;
     private double valor;
     private TipoLancamento tipo;
     private TipoOperacao operacao;
-    private Long contaId;
+    private Long idConta;
+
 
 
 }
