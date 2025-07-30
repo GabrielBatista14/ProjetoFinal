@@ -1,37 +1,33 @@
 package com.projeto.projetofinal.modelos.entidades;
 
 import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
 @Entity
-@Table(name = "tbConta")
-public class Conta {
+@Table(name = "tbHistorico")
+public class Historico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String numero;
+    private LocalDateTime dataAcesso;
 
-    @Column(unique = true)
-    private String chavePix;
-
-    @Column(nullable = false)
-    private double saldo;
-
-    @Column(nullable = false)
-    private double limiteCredito;
+    @Column(nullable = true)//trocar depois
+    private String ipAcesso;
 
     @ManyToOne
     @JoinColumn(name = "clienteId", nullable = false)
     private Pessoa cliente;
-
 
 }

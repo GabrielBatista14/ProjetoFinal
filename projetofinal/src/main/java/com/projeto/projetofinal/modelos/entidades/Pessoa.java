@@ -1,19 +1,23 @@
 package com.projeto.projetofinal.modelos.entidades;
+import com.projeto.projetofinal.modelos.autenticacao.Usuario;
 import jakarta.persistence.*;
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 @Entity
 @Table(name = "tbHist")
-public class Cliente {
+public class Pessoa{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String cpf;
+
 
     @Column(nullable = false)
     private String nome;

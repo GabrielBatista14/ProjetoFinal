@@ -1,37 +1,38 @@
 package com.projeto.projetofinal.modelos.entidades;
 
+import com.projeto.projetofinal.modelos.enums.TipoLancamento;
+import com.projeto.projetofinal.modelos.enums.TipoOperacao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
 @Entity
-@Table(name = "tbConta")
-public class Conta {
+@Table(name = "tbLancamento")
+public class Lancamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String numero;
+    private double valor;
 
-    @Column(unique = true)
-    private String chavePix;
-
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private double saldo;
+    private TipoLancamento tipo;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private double limiteCredito;
+    private TipoOperacao operacao;
 
     @ManyToOne
-    @JoinColumn(name = "clienteId", nullable = false)
-    private Pessoa cliente;
-
+    @JoinColumn(name = "contaId", nullable = false)
+    private Conta conta;
 
 }
